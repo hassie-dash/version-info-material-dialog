@@ -1,7 +1,7 @@
-Version Info Material Dialog [ ![Download](https://api.bintray.com/packages/hassie/maven/version-info-material-dialog/images/download.svg) ](https://bintray.com/hassie/maven/version-info-material-dialog/_latestVersion)
+Version Info Material Dialog
 ============================
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee4f42264d0146f895374dffbeda0cdc)](https://www.codacy.com/app/hassie-dash/version-info-material-dialog?utm_source=github.com&utm_medium=referral&utm_content=hassie-dash/version-info-material-dialog&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee4f42264d0146f895374dffbeda0cdc)](https://www.codacy.com/app/hassie-dash/version-info-material-dialog?utm_source=github.com&utm_medium=referral&utm_content=hassie-dash/version-info-material-dialog&utm_campaign=badger) [![Download](https://api.bintray.com/packages/hassie/maven/version-info-material-dialog/images/download.svg) ](https://bintray.com/hassie/maven/version-info-material-dialog/_latestVersion)
 
 A simple Android library compatible all the way down to API 9, which shows a material dialog with version info for the app; including app icon, app name, app version and copyright notice.
 
@@ -39,6 +39,20 @@ strings.xml
 ```xml
 <string name="app_copyright">&#169;2017 Hassie.</string>
 <string name="version_prefix">Version</string>
+```
+
+Example usage 2
+---------------
+You can also build the dialog and call the show method at a later point in your code.
+
+HomeActivity.java
+```java
+VersionInfoMDialog versionInfoMDialog = new VersionInfoMDialog.Builder(HomeActivity.this)
+    .setCopyrightText(R.string.app_copyright)
+    .setVersionPrefix(R.string.version_prefix)
+    .build();
+    
+versionInfoMDialog.show();
 ```
 
 License
