@@ -35,86 +35,86 @@ import android.widget.TextView;
 public class VersionInfoMDialog{
 
     private AlertDialog mVersionInfoMaterialDialog;
+    private Context mContext;
+    private CharSequence mVersionPrefix;
+    private CharSequence mCopyrightText;
 
     public static class Builder extends VersionInfoMDialog {
 
-        private Context mContext;
-        private CharSequence mVersionPrefix;
-        private CharSequence mCopyrightText;
-
         public Builder(Context context) {
-            mContext = context;
-        }
-
-        public Builder setVersionPrefix(@NonNull CharSequence versionPrefixText) {
-            mVersionPrefix = versionPrefixText;
-            return this;
-        }
-
-        public Builder setVersionPrefix(@StringRes int versionPrefixId) {
-            if (versionPrefixId == 0)
-                return this;
-            mVersionPrefix = mContext.getResources().getString(versionPrefixId);
-            return this;
+            super.mContext = context;
         }
 
         public Builder setCopyrightText(@NonNull CharSequence copyrightText) {
-            mCopyrightText = copyrightText;
+            super.mCopyrightText = copyrightText;
             return this;
         }
 
         public Builder setCopyrightText(@StringRes int copyrightTextId) {
             if (copyrightTextId == 0)
                 return this;
-            mCopyrightText = mContext.getResources().getString(copyrightTextId);
+            super.mCopyrightText = super.mContext.getResources().getString(copyrightTextId);
             return this;
         }
 
-        public Builder build() {
+        public Builder setVersionPrefix(@NonNull CharSequence versionPrefixText) {
+            super.mVersionPrefix = versionPrefixText;
+            return this;
+        }
 
-            LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-            View view = layoutInflater.inflate(R.layout.alert_dialog_version_info, null);
-
-            ImageView appIcon = (ImageView) view.findViewById(R.id.imgAppIcon);
-            TextView appName = (TextView) view.findViewById(R.id.txtAppName);
-            TextView appVersion = (TextView) view.findViewById(R.id.txtAppVersionName);
-            TextView appCopyright = (TextView) view.findViewById(R.id.txtAppCopyright);
-
-            ApplicationInfo applicationInfo = mContext.getApplicationInfo();
-            appIcon.setImageResource(applicationInfo.icon);
-
-            if (applicationInfo.labelRes == 0) {
-                appName.setText(applicationInfo.nonLocalizedLabel);
-            } else {
-                appName.setText(applicationInfo.labelRes);
-            }
-
-            try {
-                PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
-                if (mVersionPrefix == null || mVersionPrefix.equals("")) {
-                    appVersion.setText(packageInfo.versionName);
-                } else {
-                    appVersion.setText(mVersionPrefix + " " + packageInfo.versionName);
-                }
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-
-            appCopyright.setText(mCopyrightText);
-
-            AlertDialog alertDialog;
-            alertDialog = new AlertDialog.Builder(mContext)
-                    .setView(view)
-                    .create();
-
-            super.mVersionInfoMaterialDialog = alertDialog;
-
+        public Builder setVersionPrefix(@StringRes int versionPrefixId) {
+            if (versionPrefixId == 0)
+                return this;
+            super.mVersionPrefix = super.mContext.getResources().getString(versionPrefixId);
             return this;
         }
 
     }
 
+    public VersionInfoMDialog build() {
+
+        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+        View view = layoutInflater.inflate(R.layout.alert_dialog_version_info, null);
+
+        ImageView appIcon = (ImageView) view.findViewById(R.id.imgAppIcon);
+        TextView appName = (TextView) view.findViewById(R.id.txtAppName);
+        TextView appVersion = (TextView) view.findViewById(R.id.txtAppVersionName);
+        TextView appCopyright = (TextView) view.findViewById(R.id.txtAppCopyright);
+
+        ApplicationInfo applicationInfo = mContext.getApplicationInfo();
+        appIcon.setImageResource(applicationInfo.icon);
+
+        if (applicationInfo.labelRes == 0) {
+            appName.setText(applicationInfo.nonLocalizedLabel);
+        } else {
+            appName.setText(applicationInfo.labelRes);
+        }
+
+        try {
+            PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
+            if (mVersionPrefix == null || mVersionPrefix.equals("")) {
+                appVersion.setText(packageInfo.versionName);
+            } else {
+                appVersion.setText(mVersionPrefix + " " + packageInfo.versionName);
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        appCopyright.setText(mCopyrightText);
+
+        AlertDialog alertDialog;
+        alertDialog = new AlertDialog.Builder(mContext)
+                .setView(view)
+                .create();
+
+        mVersionInfoMaterialDialog = alertDialog;
+
+        return this;
+    }
+
     public VersionInfoMDialog show() {
+        build();
         mVersionInfoMaterialDialog.show();
         return this;
     }
