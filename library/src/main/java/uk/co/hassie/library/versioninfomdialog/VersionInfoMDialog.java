@@ -34,7 +34,9 @@ import android.widget.TextView;
 
 public class VersionInfoMDialog{
 
-    public static class Builder {
+    private AlertDialog mVersionInfoMaterialDialog;
+
+    public static class Builder extends VersionInfoMDialog {
 
         private Context mContext;
         private CharSequence mVersionPrefix;
@@ -68,7 +70,7 @@ public class VersionInfoMDialog{
             return this;
         }
 
-        private AlertDialog build() {
+        public Builder build() {
 
             LayoutInflater layoutInflater = LayoutInflater.from(mContext);
             View view = layoutInflater.inflate(R.layout.alert_dialog_version_info, null);
@@ -105,15 +107,16 @@ public class VersionInfoMDialog{
                     .setView(view)
                     .create();
 
-            return alertDialog;
+            super.mVersionInfoMaterialDialog = alertDialog;
 
-        }
-
-        public Builder show() {
-            AlertDialog alertDialog = build();
-            alertDialog.show();
             return this;
         }
 
     }
+
+    public VersionInfoMDialog show() {
+        mVersionInfoMaterialDialog.show();
+        return this;
+    }
+
 }
