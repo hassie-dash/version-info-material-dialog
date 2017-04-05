@@ -32,12 +32,15 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 5
-        versionName "0.0.5"
+        versionCode 6
+        versionName "0.0.6"
     }
     buildTypes {
         release {
             consumerProguardFiles 'proguard-rules.pro'
+        }
+        lintOptions {
+            disable 'InflateParams', 'SetTextI18n', 'RtlSymmetry'
         }
     }
 }
@@ -51,7 +54,7 @@ dependencies {
 publish {
     groupId = 'uk.co.hassie'
     artifactId = 'version-info-material-dialog'
-    publishVersion = '0.0.5'
+    publishVersion = '0.0.6'
     desc = 'A simple Android library compatible all the way down to API 9, which shows a material dialog with version info for the app; using the same style as Googles version info dialogs'
     website = 'https://github.com/hassie-dash/version-info-material-dialog'
 }

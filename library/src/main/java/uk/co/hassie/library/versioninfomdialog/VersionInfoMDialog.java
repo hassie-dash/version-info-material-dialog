@@ -34,7 +34,7 @@ import android.widget.TextView;
 
 public class VersionInfoMDialog{
 
-    private AlertDialog mVersionInfoMaterialDialog;
+    private AlertDialog mVersionInfoMaterialDialog = null;
     private Context mContext;
     private CharSequence mVersionPrefix;
     private CharSequence mCopyrightText;
@@ -114,7 +114,8 @@ public class VersionInfoMDialog{
     }
 
     public VersionInfoMDialog show() {
-        build();
+        if (mVersionInfoMaterialDialog == null)
+            build();
         mVersionInfoMaterialDialog.show();
         return this;
     }

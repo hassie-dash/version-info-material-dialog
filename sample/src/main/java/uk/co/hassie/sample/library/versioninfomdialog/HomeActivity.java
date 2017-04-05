@@ -65,7 +65,11 @@ public class HomeActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            new VersionInfoMDialog.Builder(HomeActivity.this)
+                    .setCopyrightText(R.string.app_copyright)
+                    .setVersionPrefix(R.string.version_prefix)
+                    .show();
             return true;
         }
 
