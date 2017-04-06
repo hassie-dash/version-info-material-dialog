@@ -23,13 +23,17 @@ android {
         applicationId "uk.co.hassie.sample.library.versioninfomdialog"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 6
-        versionName "0.0.6"
+        versionCode 7
+        versionName "0.0.7"
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+        lintOptions {
+            abortOnError false
         }
     }
 }
