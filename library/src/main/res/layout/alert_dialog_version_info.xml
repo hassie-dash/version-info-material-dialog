@@ -38,19 +38,19 @@
         android:minHeight="8dp"
         android:minWidth="8dp"
         tools:ignore="ContentDescription"
-        tools:src="@drawable/ic_launcher_round" />
+        tools:src="@android:mipmap/sym_def_app_icon" />
 
     <TextView
+        android:id="@+id/txtAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAppName"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginBottom="2dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="4dp"
-        android:layout_toRightOf="@id/imgAppIcon"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/imgAppIcon"
+        android:layout_toRightOf="@id/imgAppIcon"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         tools:text="App Name" />

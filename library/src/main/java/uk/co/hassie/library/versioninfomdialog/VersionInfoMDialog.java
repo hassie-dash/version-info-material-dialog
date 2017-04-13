@@ -17,6 +17,7 @@
 package uk.co.hassie.library.versioninfomdialog;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -39,39 +40,7 @@ public class VersionInfoMDialog{
     private CharSequence mVersionPrefix;
     private CharSequence mCopyrightText;
 
-    public static class Builder extends VersionInfoMDialog {
-
-        public Builder(Context context) {
-            super.mContext = context;
-        }
-
-        public Builder setCopyrightText(@NonNull CharSequence copyrightText) {
-            super.mCopyrightText = copyrightText;
-            return this;
-        }
-
-        public Builder setCopyrightText(@StringRes int copyrightTextId) {
-            if (copyrightTextId == 0)
-                return this;
-            super.mCopyrightText = super.mContext.getResources().getString(copyrightTextId);
-            return this;
-        }
-
-        public Builder setVersionPrefix(@NonNull CharSequence versionPrefixText) {
-            super.mVersionPrefix = versionPrefixText;
-            return this;
-        }
-
-        public Builder setVersionPrefix(@StringRes int versionPrefixId) {
-            if (versionPrefixId == 0)
-                return this;
-            super.mVersionPrefix = super.mContext.getResources().getString(versionPrefixId);
-            return this;
-        }
-
-    }
-
-    public VersionInfoMDialog build() {
+    private VersionInfoMDialog build() {
 
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View view = layoutInflater.inflate(R.layout.alert_dialog_version_info, null);
@@ -103,12 +72,9 @@ public class VersionInfoMDialog{
 
         appCopyright.setText(mCopyrightText);
 
-        AlertDialog alertDialog;
-        alertDialog = new AlertDialog.Builder(mContext)
+        mVersionInfoMaterialDialog = new AlertDialog.Builder(mContext)
                 .setView(view)
                 .create();
-
-        mVersionInfoMaterialDialog = alertDialog;
 
         return this;
     }
@@ -118,6 +84,49 @@ public class VersionInfoMDialog{
             build();
         mVersionInfoMaterialDialog.show();
         return this;
+    }
+
+    public static class Builder extends VersionInfoMDialog {
+
+        public Builder(Context context) {
+            super.mContext = context;
+        }
+
+        public Builder setCopyrightText(@NonNull CharSequence copyright) {
+            super.mCopyrightText = copyright;
+            return this;
+        }
+
+        public Builder setCopyrightText(@StringRes int copyrightResId) {
+            if (copyrightResId == 0)
+                return this;
+            super.mCopyrightText = super.mContext.getResources().getString(copyrightResId);
+            return this;
+        }
+
+        public Builder setVersionPrefix(@NonNull CharSequence versionPrefix) {
+            super.mVersionPrefix = versionPrefix;
+            return this;
+        }
+
+        public Builder setVersionPrefix(@StringRes int versionPrefixResId) {
+            if (versionPrefixResId == 0)
+                return this;
+            super.mVersionPrefix = super.mContext.getResources().getString(versionPrefixResId);
+            return this;
+        }
+
+        public Builder build(){
+
+            super.build();
+            return this;
+        }
+
+        public Builder show() {
+            super.show();
+            return this;
+        }
+
     }
 
 }
