@@ -30,7 +30,9 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
+        maven {
+            url "C:/Users/Hassie/Documents/My Stuff/Android M2"
+        }
         jcenter()
     }
 }

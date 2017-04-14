@@ -17,7 +17,6 @@
 package uk.co.hassie.library.versioninfomdialog;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;

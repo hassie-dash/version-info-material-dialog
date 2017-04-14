@@ -23,8 +23,8 @@ android {
         applicationId "uk.co.hassie.sample.library.versioninfomdialog"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 8
-        versionName "0.0.8"
+        versionCode 9
+        versionName "0.0.9"
     }
     buildTypes {
         release {

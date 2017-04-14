@@ -17,7 +17,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     
     // Add this dependency.
-    compile 'uk.co.hassie:version-info-material-dialog:0.0.8'
+    compile 'uk.co.hassie:version-info-material-dialog:0.0.9'
 }
 ```
 
