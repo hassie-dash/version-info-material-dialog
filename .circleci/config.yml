@@ -10,12 +10,12 @@ jobs:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "sample/build.gradle" }}-{{ checksum  "library/build.gradle" }}
-      - dependencies:
-          override:
-           - chmod +x gradlew
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
+          dependencies:
+            override:
+              - chmod +x gradlew
       - save_cache:
           paths:
             - ~/.gradle
