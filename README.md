@@ -1,7 +1,7 @@
 Version Info Material Dialog
 ============================
 
-[![Build Status](https://travis-ci.org/hassie-dash/version-info-material-dialog.svg?branch=master)](https://travis-ci.org/hassie-dash/version-info-material-dialog) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee4f42264d0146f895374dffbeda0cdc)](https://www.codacy.com/app/hassie-dash/version-info-material-dialog?utm_source=github.com&utm_medium=referral&utm_content=hassie-dash/version-info-material-dialog&utm_campaign=badger) [![Download](https://api.bintray.com/packages/hassie/maven/version-info-material-dialog/images/download.svg) ](https://bintray.com/hassie/maven/version-info-material-dialog/_latestVersion)
+[![CircleCI](https://circleci.com/gh/hassie-dash/version-info-material-dialog.svg?style=svg)](https://circleci.com/gh/hassie-dash/version-info-material-dialog) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee4f42264d0146f895374dffbeda0cdc)](https://www.codacy.com/app/hassie-dash/version-info-material-dialog?utm_source=github.com&utm_medium=referral&utm_content=hassie-dash/version-info-material-dialog&utm_campaign=badger) [![Download](https://api.bintray.com/packages/hassie/maven/version-info-material-dialog/images/download.svg) ](https://bintray.com/hassie/maven/version-info-material-dialog/_latestVersion)
 
 A simple Android library compatible all the way down to API 9, which shows a material dialog with version info for the app; including app icon, app name, app version and copyright notice.
 
