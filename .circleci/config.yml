@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    dependencies:
+      override:
+       - chmod +x gradlew
     working_directory: ~/code
     docker:
       - image: circleci/android:api-26-alpha
@@ -25,6 +28,3 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
-dependencies:
-  override:
-     - chmod +x gradlew
