@@ -6,6 +6,9 @@ jobs:
       - image: circleci/android:api-26-alpha
     environment:
       JVM_OPTS: -Xmx3200m
+    dependencies:
+      override:
+        - chmod +x gradlew
     steps:
       - checkout
       - restore_cache:
@@ -13,9 +16,6 @@ jobs:
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
-          dependencies:
-            override:
-              - chmod +x gradlew
       - save_cache:
           paths:
             - ~/.gradle
