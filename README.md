@@ -55,6 +55,10 @@ VersionInfoMDialog versionInfoMDialog = new VersionInfoMDialog.Builder(HomeActiv
 versionInfoMDialog.show();
 ```
 
+Support for API 9 - API 13
+--------------------------
+Due to incompatible API changes in the Android Support Library, these APIs are no longer supported. Use version 0.0.9 which used the old support library version to support these APIs.
+
 License
 -------
 Copyright ©2017 Hassie.
