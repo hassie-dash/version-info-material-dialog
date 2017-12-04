@@ -22,36 +22,31 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.novoda:bintray-release:0.4.0'
+        classpath 'com.novoda:bintray-release:0.8.0'
     }
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 25
-        versionCode 9
-        versionName "0.0.9"
-    }
-    buildTypes {
-        lintOptions {
-            abortOnError false
-        }
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 10
+        versionName "0.1.0"
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:support-annotations:25.3.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:support-annotations:27.0.2'
 }
 
 publish {
     groupId = 'uk.co.hassie'
     artifactId = 'version-info-material-dialog'
-    publishVersion = '0.0.9'
-    desc = 'A simple Android library compatible all the way down to API 9, which shows a material dialog with version info for the app; using the same style as Googles version info dialogs'
+    publishVersion = '0.1.0'
+    desc = 'A simple Android library compatible all the way down to API 14, which builds a material dialog with version info for the app; using the same style as Google\'s version info dialogs'
     website = 'https://github.com/hassie-dash/version-info-material-dialog'
 }

@@ -20,4 +20,7 @@
     <string name="app_copyright">&#169;2017 Hassie.</string>
     <string name="version_prefix">Version</string>
 
+
+    <string name="home_show_dialog_button">Show Dialog</string>
+    <string name="home_menu_about">About</string>
 </resources>

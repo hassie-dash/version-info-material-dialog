@@ -1,7 +1,7 @@
 <component name="CopyrightManager">
-  <settings default="Open Source Library">
+  <settings default="Android Open Source Library">
     <module2copyright>
-      <element module="All" copyright="Open Source Library" />
+      <element module="All" copyright="Android Open Source Library" />
     </module2copyright>
   </settings>
 </component>

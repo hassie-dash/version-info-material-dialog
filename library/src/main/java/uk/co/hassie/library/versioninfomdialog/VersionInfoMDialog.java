@@ -29,7 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by Hassie on 16/03/2017.
+ * Created by Hassie on 04/12/2017.
  */
 
 public class VersionInfoMDialog{
@@ -42,12 +42,12 @@ public class VersionInfoMDialog{
     private VersionInfoMDialog build() {
 
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        View view = layoutInflater.inflate(R.layout.alert_dialog_version_info, null);
+        View view = layoutInflater.inflate(R.layout.dialog_version_info, null);
 
-        ImageView appIcon = (ImageView) view.findViewById(R.id.imgAppIcon);
-        TextView appName = (TextView) view.findViewById(R.id.txtAppName);
-        TextView appVersion = (TextView) view.findViewById(R.id.txtAppVersionName);
-        TextView appCopyright = (TextView) view.findViewById(R.id.txtAppCopyright);
+        ImageView appIcon = (ImageView) view.findViewById(R.id.app_icon);
+        TextView appName = (TextView) view.findViewById(R.id.app_name);
+        TextView appVersion = (TextView) view.findViewById(R.id.app_version_name);
+        TextView appCopyright = (TextView) view.findViewById(R.id.app_copyright);
 
         ApplicationInfo applicationInfo = mContext.getApplicationInfo();
         appIcon.setImageResource(applicationInfo.icon);
@@ -63,7 +63,8 @@ public class VersionInfoMDialog{
             if (mVersionPrefix == null || mVersionPrefix.equals("")) {
                 appVersion.setText(packageInfo.versionName);
             } else {
-                appVersion.setText(mVersionPrefix + " " + packageInfo.versionName);
+                String appVersionText = mVersionPrefix + " " + packageInfo.versionName;
+                appVersion.setText(appVersionText);
             }
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

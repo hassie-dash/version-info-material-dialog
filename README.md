@@ -17,13 +17,9 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     
     // Add this dependency.
-    compile 'uk.co.hassie:version-info-material-dialog:0.0.9'
+    compile 'uk.co.hassie:version-info-material-dialog:0.1.0'
 }
 ```
-
-Dialog builder method
----------------------
-To show and set the properties of the dialog, use the dialog builder method. The text properties can either be a hardcoded string or a string resource.
 
 Example usage
 -------------
@@ -57,7 +53,7 @@ versionInfoMDialog.show();
 
 Support for API 9 - API 13
 --------------------------
-Due to incompatible API changes in the Android Support Library, these APIs are no longer supported. Use version 0.0.9 which used the old support library version to support these APIs.
+Due to incompatible API changes in the Android Support Library, these APIs are no longer supported. Use version 0.0.9 which uses the old support library to support these APIs.
 
 License
 -------

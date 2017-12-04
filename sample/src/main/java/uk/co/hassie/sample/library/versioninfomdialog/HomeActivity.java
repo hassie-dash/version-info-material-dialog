@@ -47,7 +47,6 @@ public class HomeActivity extends AppCompatActivity {
                         .show();
             }
         });
-
     }
 
     @Override

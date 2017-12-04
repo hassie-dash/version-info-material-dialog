@@ -21,7 +21,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imgAppIcon"
+        android:id="@+id/app_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -41,7 +41,7 @@
         tools:src="@android:mipmap/sym_def_app_icon" />
 
     <TextView
-        android:id="@+id/txtAppName"
+        android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -49,8 +49,8 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="20dp"
-        android:layout_toEndOf="@id/imgAppIcon"
-        android:layout_toRightOf="@id/imgAppIcon"
+        android:layout_toEndOf="@id/app_icon"
+        android:layout_toRightOf="@id/app_icon"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         tools:text="App Name" />
@@ -58,10 +58,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAppVersionName"
-        android:layout_below="@+id/txtAppName"
-        android:layout_toRightOf="@+id/imgAppIcon"
-        android:layout_toEndOf="@+id/imgAppIcon"
+        android:id="@+id/app_version_name"
+        android:layout_below="@id/app_name"
+        android:layout_toRightOf="@id/app_icon"
+        android:layout_toEndOf="@id/app_icon"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="25dp"
         android:layout_marginEnd="25dp"
@@ -73,10 +73,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAppCopyright"
-        android:layout_below="@+id/txtAppVersionName"
-        android:layout_toRightOf="@+id/imgAppIcon"
-        android:layout_toEndOf="@+id/imgAppIcon"
+        android:id="@+id/app_copyright"
+        android:layout_below="@id/app_version_name"
+        android:layout_toRightOf="@id/app_icon"
+        android:layout_toEndOf="@id/app_icon"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="25dp"
         android:layout_marginEnd="25dp"
