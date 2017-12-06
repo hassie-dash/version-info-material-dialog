@@ -21,6 +21,10 @@ android:
     # - sys-img-armeabi-v7a-android-22
     # - sys-img-armeabi-v7a-android-17
 
+script:
+  - ./gradlew build jacocoTestReport assembleAndroidTest
+  - ./gradlew check
+
 before_install:
  - chmod +x gradlew
 

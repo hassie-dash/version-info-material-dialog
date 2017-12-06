@@ -16,6 +16,7 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'jacoco-android'
 
 buildscript {
     repositories {
@@ -23,6 +24,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.novoda:bintray-release:0.8.0'
+        classpath 'com.dicedmelon.gradle:jacoco-android:0.1.2'
     }
 }
 
@@ -34,6 +36,11 @@ android {
         targetSdkVersion 27
         versionCode 10
         versionName "0.1.0"
+    }
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 
@@ -49,4 +56,10 @@ publish {
     publishVersion = '0.1.0'
     desc = 'A simple Android library compatible all the way down to API 14, which builds a material dialog with version info for the app; using the same style as Google\'s version info dialogs'
     website = 'https://github.com/hassie-dash/version-info-material-dialog'
+}
+
+jacocoAndroidUnitTestReport {
+    csv.enabled false
+    html.enabled false
+    xml.enabled true
 }
